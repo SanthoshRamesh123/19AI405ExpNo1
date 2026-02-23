@@ -1,6 +1,6 @@
 <h1>ExpNo 1 :Developing AI Agent with PEAS Description</h1>
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
+<h3>Name: SANTHOSH R</h3>
+<h3>Register Number:212224230249</h3>
 
 
 <h3>AIM:</h3>
@@ -40,3 +40,52 @@
 <p>Treat unhealthy patients in each room. And check for the unhealthy patients in random room</p>
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
+<h3>Program</h3>
+
+```
+import random
+
+class MedicineAgent:
+    def __init__(self):
+        self.rooms = {
+            "A": random.uniform(97.0, 102.0),
+            "B": random.uniform(97.0, 102.0)
+        }
+        self.location = "A"
+        self.performance = 0
+
+    def check_and_treat(self):
+        temp = self.rooms[self.location]
+        print(f"Room {self.location} Temperature: {temp:.1f}")
+
+        if temp > 98.5:
+            print("Fever detected. Prescribing medicine.")
+            self.performance += 10
+        else:
+            print("Patient healthy.")
+
+    def move(self):
+        self.location = "B" if self.location == "A" else "A"
+        print("Moving to Room", self.location)
+        self.performance -= 1
+
+    def run(self):
+        for _ in range(2):
+            print("\nAgent in Room", self.location)
+            self.check_and_treat()
+            self.move()
+
+        print("\nFinal Performance:", self.performance)
+
+agent = MedicineAgent()
+agent.run()
+
+```
+<h3>OUTPUT</h3>
+
+ <img width="1448" height="863" alt="Screenshot 2026-02-23 102719" src="https://github.com/user-attachments/assets/c0f0a301-9cea-485e-8e7f-160b8619269a" />
+
+<h3>Result:<h3>
+Thus the Developing AI Agent with PEAS Description was implemented using python programming.
+    
+
